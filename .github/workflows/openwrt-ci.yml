@@ -43,6 +43,12 @@ jobs:
           sudo -E apt-get clean
 
           df -h
+      
+      - name: 更新源码
+        run: |
+          git remote add openwrt https://github.com/coolsnowwolf/lede.git
+          git pull openwrt master
+          git remote -v
 
       - name: Update feeds
         run: |
